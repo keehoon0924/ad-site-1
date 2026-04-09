@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>DRONE VISUAL</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/commons.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header: transparent over hero -->
+    <header class="site-header" aria-label="Site header">
+      <div class="container site-header__inner">
+        <a class="site-logo" href="#" aria-label="DRONE VISUAL Home">
+          DRONE VISUAL
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          data-nav-toggle
+        >
+          <span class="nav-toggle__line" aria-hidden="true"></span>
+          <span class="nav-toggle__line" aria-hidden="true"></span>
+        </button>
+
+        <nav
+          id="primary-nav"
+          class="site-nav"
+          aria-label="Primary navigation"
+          data-nav
+        >
+          <a class="site-nav__link" href="#">Home</a>
+          <a class="site-nav__link" href="#">Drones</a>
+          <a class="site-nav__link" href="#">Gallery</a>
+          <a class="site-nav__link" href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero (first screen only) -->
+      <section class="hero" aria-label="Hero">
+        <!-- Background video -->
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-hidden="true"
+        >
+          <!--
+            Replace the video source below with your own.
+            Example: assets/videos/hero.mp4 (you can create that folder later)
+          -->
+          <source src="assets/images/placeholder-drone-hero.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Overlay to keep text readable -->
+        <div class="hero__overlay" aria-hidden="true"></div>
+
+        <!-- Hero content -->
+        <div class="hero__content">
+          <div class="container hero__content-inner">
+            <p class="hero__eyebrow">CINEMATIC AERIAL STORYTELLING</p>
+            <h1 class="hero__title">Explore the World from Above</h1>
+            <p class="hero__subtitle">
+              Cinematic drone visuals that capture perspective, motion, and
+              atmosphere.
+            </p>
+
+            <div class="hero__meta" aria-label="Quick info">
+              <span class="hero__meta-item">4K Capture</span>
+              <span class="hero__meta-dot" aria-hidden="true"></span>
+              <span class="hero__meta-item">FPV Motion</span>
+              <span class="hero__meta-dot" aria-hidden="true"></span>
+              <span class="hero__meta-item">Global Locations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtle scroll hint (minimal) -->
+        <a class="hero__scroll" href="#" aria-label="Scroll">
+          <span class="hero__scroll-label">Scroll</span>
+          <span class="hero__scroll-line" aria-hidden="true"></span>
+        </a>
+      </section>
+    </main>
+
+    <!-- JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/sections/hero.js"></script>
+  </body>
+</html>
+

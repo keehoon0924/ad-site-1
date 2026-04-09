@@ -1,0 +1,79 @@
+/* commons.css
+  - 프로젝트 전역(공통) 스타일 가이드 전용
+  - reset/normalize, typography scale, color tokens, spacing, layout util 등을 여기에 둡니다.
+*/
+
+/* ========== Design Tokens ========== */
+:root {
+  --color-text: #111;
+  --color-muted: #666;
+  --color-bg: #fff;
+  --color-border: #e5e7eb;
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR",
+    "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
+
+  --radius-1: 8px;
+  --shadow-1: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ========== Base / Reset (lightweight) ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* ========== Utilities ========== */
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
