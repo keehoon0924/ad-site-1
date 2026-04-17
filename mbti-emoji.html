@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MBTI 이모지 타입 - EmojiRibbit</title>
+    <meta name="description" content="5가지 질문으로 알아보는 나의 이모지 MBTI 타입" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="assets/css/commons.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/subpage.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container">
+        <div class="site-header__inner">
+          <a href="index.html" class="site-logo" aria-label="EmojiRibbit 홈">🐸 EmojiRibbit</a>
+          <nav class="site-nav" role="navigation">
+            <a href="dictionary.html" class="site-nav__link">📖 이모지 사전</a>
+            <a href="copy-tool.html" class="site-nav__link">📋 복사 도구</a>
+            <a href="trends.html" class="site-nav__link">🧬 세대별 트렌드</a>
+            <a href="fortune.html" class="site-nav__link">🔮 이모지 운세</a>
+          </nav>
+          <div class="search-wrapper" role="search">
+            <input type="search" class="search-input" placeholder="검색..." aria-label="검색" />
+            <button class="search-btn">🔍</button>
+          </div>
+          <button class="theme-toggle" data-theme-toggle aria-label="다크 모드">
+            <span class="theme-icon">🌙</span>
+          </button>
+          <button class="nav-toggle" data-nav-toggle aria-label="메뉴 열기">
+            <span class="nav-toggle__line"></span>
+            <span class="nav-toggle__line"></span>
+            <span class="nav-toggle__line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html" class="breadcrumb__link">홈</a>
+          <span class="breadcrumb__separator">/</span>
+          <span class="breadcrumb__current">MBTI 이모지 타입</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="mbti-hero" style="background:linear-gradient(135deg, #1a0533 0%, #3b0764 40%, #6d28d9 70%, #a855f7 100%);
+      padding:80px 20px 60px; text-align:center; color:white;">
+      <div class="container">
+        <h1 style="font-size:3rem; font-weight:800; margin-bottom:16px; text-shadow:0 2px 8px rgba(0,0,0,0.3);">
+          🧠 나는 어떤 이모지 타입?
+        </h1>
+        <p style="font-size:1.2rem; opacity:0.95; margin-bottom:28px; text-shadow:0 1px 4px rgba(0,0,0,0.2);">
+          5가지 질문으로 알아보는 나의 이모지 MBTI
+        </p>
+        <button id="start-test-btn" style="padding:16px 40px; background:#f97316; color:white; border:none;
+          border-radius:50px; font-size:1.1rem; font-weight:700; cursor:pointer;
+          transition:all 0.2s; box-shadow:0 8px 24px rgba(249,115,22,0.3);">
+          테스트 시작하기 →
+        </button>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container" style="padding:60px 20px;">
+
+      <!-- SECTION 2: MBTI Test -->
+      <section id="mbti-test-section" style="display:none; margin-bottom:80px;">
+        <h2 style="text-align:center; margin-bottom:40px; font-size:2rem;">MBTI 미니 테스트</h2>
+        
+        <!-- Progress Bar -->
+        <div style="max-width:600px; margin:0 auto 40px; text-align:center;">
+          <div style="background:#e5e7eb; height:8px; border-radius:10px; overflow:hidden;">
+            <div id="progress-bar" style="width:20%; height:100%; background:linear-gradient(90deg,#7c3aed,#a855f7);
+              transition:width 0.3s ease;"></div>
+          </div>
+          <p id="progress-text" style="margin-top:12px; font-size:0.95rem; color:#666;">1 / 5</p>
+        </div>
+
+        <!-- Question Container -->
+        <div style="max-width:600px; margin:0 auto; background:white; border-radius:16px; padding:40px;
+          box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+          <h3 id="question-text" style="margin-bottom:24px; font-size:1.2rem; color:#111827;"></h3>
+          <div id="answers-container" style="display:flex; flex-direction:column; gap:12px;"></div>
+        </div>
+      </section>
+
+      <!-- SECTION 2b: Test Result -->
+      <section id="test-result-section" style="display:none; margin-bottom:80px;">
+        <div style="max-width:600px; margin:0 auto; background:linear-gradient(135deg,#f3e8ff,#faf5ff);
+          border-radius:24px; padding:60px 40px; text-align:center; border:2px solid #e9d5ff;">
+          
+          <div id="result-mbti" style="font-size:3.5rem; font-weight:900; color:#7c3aed; margin-bottom:12px;"></div>
+          <div id="result-name" style="font-size:1.5rem; font-weight:700; color:#111827; margin-bottom:24px;"></div>
+          
+          <div id="result-emojis" style="font-size:4rem; margin:32px 0; letter-spacing:16px;"></div>
+          
+          <p id="result-desc" style="font-size:1rem; color:#666; line-height:1.6; margin-bottom:32px;"></p>
+          
+          <div style="display:flex; gap:12px; margin-bottom:24px; flex-wrap:wrap; justify-content:center;">
+            <button id="copy-result-btn" style="padding:12px 24px; background:linear-gradient(135deg,#7c3aed,#a855f7);
+              color:white; border:none; border-radius:10px; font-weight:600; cursor:pointer;">
+              이모지 복사
+            </button>
+            <button id="share-sns-btn" style="padding:12px 24px; background:#0ea5e9; color:white;
+              border:none; border-radius:10px; font-weight:600; cursor:pointer;">
+              SNS 공유 텍스트 복사
+            </button>
+            <button id="view-all-btn" style="padding:12px 24px; background:#6b7280; color:white;
+              border:none; border-radius:10px; font-weight:600; cursor:pointer;">
+              16개 전체 보기
+            </button>
+            <button id="retry-test-btn" style="padding:12px 24px; background:#d1d5db; color:#111827;
+              border:none; border-radius:10px; font-weight:600; cursor:pointer;">
+              다시 테스트
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: 16 MBTI Cards -->
+      <section id="mbti-cards-section" style="display:none; margin-bottom:80px;">
+        <h2 style="text-align:center; margin-bottom:40px; font-size:2rem;">16가지 이모지 MBTI 타입</h2>
+        
+        <!-- Tabs -->
+        <div style="display:flex; justify-content:center; gap:12px; margin-bottom:40px; flex-wrap:wrap;">
+          <button class="mbti-tab active" data-group="분석가형" 
+            style="padding:12px 20px; border-radius:50px; border:2px solid #4f46e5;
+            background:#4f46e5; color:white; font-weight:600; cursor:pointer;">
+            🤖 분석가형 (NT)
+          </button>
+          <button class="mbti-tab" data-group="외교관형"
+            style="padding:12px 20px; border-radius:50px; border:2px solid #7c3aed;
+            background:white; color:#7c3aed; font-weight:600; cursor:pointer;">
+            💜 외교관형 (NF)
+          </button>
+          <button class="mbti-tab" data-group="수호자형"
+            style="padding:12px 20px; border-radius:50px; border:2px solid #0d9488;
+            background:white; color:#0d9488; font-weight:600; cursor:pointer;">
+            🛡️ 수호자형 (SJ)
+          </button>
+          <button class="mbti-tab" data-group="탐험가형"
+            style="padding:12px 20px; border-radius:50px; border:2px solid #d97706;
+            background:white; color:#d97706; font-weight:600; cursor:pointer;">
+            🎯 탐험가형 (SP)
+          </button>
+        </div>
+
+        <!-- Cards Grid -->
+        <div id="mbti-cards-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+          gap:24px;"></div>
+      </section>
+
+      <!-- SECTION 4: Compatibility Checker -->
+      <section id="compatibility-section" style="margin-bottom:80px;">
+        <h2 style="text-align:center; margin-bottom:40px; font-size:2rem;">💘 이모지 궁합 체커</h2>
+        
+        <div style="max-width:700px; margin:0 auto; background:white; border-radius:16px; padding:40px;
+          box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+          <p style="text-align:center; color:#666; margin-bottom:28px;">두 MBTI를 선택하면 궁합을 알려드려요</p>
+          
+          <div style="display:grid; grid-template-columns:1fr auto 1fr; gap:16px; align-items:center; margin-bottom:28px;">
+            <select id="compat-left" style="padding:12px 16px; border:2px solid #e5e7eb; border-radius:10px;
+              font-size:1rem;">
+              <option value="">내 MBTI 선택</option>
+            </select>
+            
+            <div style="font-size:2rem; text-align:center;">❤️</div>
+            
+            <select id="compat-right" style="padding:12px 16px; border:2px solid #e5e7eb; border-radius:10px;
+              font-size:1rem;">
+              <option value="">상대방 MBTI 선택</option>
+            </select>
+          </div>
+          
+          <button id="check-compat-btn" style="width:100%; padding:14px; background:linear-gradient(135deg,#7c3aed,#a855f7);
+            color:white; border:none; border-radius:10px; font-weight:700; cursor:pointer; font-size:1rem;">
+            궁합 확인
+          </button>
+          
+          <div id="compat-result" style="display:none; margin-top:32px; padding-top:32px; border-top:2px solid #e5e7eb;"></div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: SNS Font Converter -->
+      <section id="font-converter-section" style="margin-bottom:80px;">
+        <h2 style="text-align:center; margin-bottom:40px; font-size:2rem;">✍️ SNS 특수 폰트 변환기</h2>
+        
+        <div style="max-width:700px; margin:0 auto; background:white; border-radius:16px; padding:40px;
+          box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+          <p style="text-align:center; color:#666; margin-bottom:24px;">인스타, 트위터에서 눈에 띄는 특이한 글씨체로 변환해보세요</p>
+          
+          <textarea id="font-input" placeholder="변환할 텍스트를 입력하세요..." style="width:100%; min-height:100px;
+            padding:16px; border:2px solid #e5e7eb; border-radius:10px; font-size:1rem; resize:vertical; box-sizing:border-box;"></textarea>
+          
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:12px; margin-top:24px;">
+            <button class="font-btn" data-font="cursive" style="padding:12px; background:#f3e8ff; color:#7c3aed;
+              border:2px solid #e9d5ff; border-radius:8px; font-weight:600; cursor:pointer;">
+              𝓒𝓾𝓻𝓼𝓲𝓿𝓮
+            </button>
+            <button class="font-btn" data-font="gothic" style="padding:12px; background:#fef3c7; color:#d97706;
+              border:2px solid #fcd34d; border-radius:8px; font-weight:600; cursor:pointer;">
+              𝔊𝔬𝔱𝔥𝔦𝔠
+            </button>
+            <button class="font-btn" data-font="bubble" style="padding:12px; background:#dcfce7; color:#16a34a;
+              border:2px solid #bbf7d0; border-radius:8px; font-weight:600; cursor:pointer;">
+              🅱🅾🅱🅱🅻🅴
+            </button>
+            <button class="font-btn" data-font="strike" style="padding:12px; background:#fee2e2; color:#dc2626;
+              border:2px solid #fecaca; border-radius:8px; font-weight:600; cursor:pointer;">
+              S̶t̶r̶i̶k̶e̶
+            </button>
+            <button class="font-btn" data-font="fullwidth" style="padding:12px; background:#e0e7ff; color:#4f46e5;
+              border:2px solid #c7d2fe; border-radius:8px; font-weight:600; cursor:pointer;">
+              Ｆｕｌｌｗｉｄｔｈ
+            </button>
+            <button class="font-btn" data-font="tiny" style="padding:12px; background:#f0f9ff; color:#0369a1;
+              border:2px solid #bae6fd; border-radius:8px; font-weight:600; cursor:pointer;">
+              ᵗⁱⁿʸ
+            </button>
+          </div>
+          
+          <textarea id="font-output" readonly style="width:100%; min-height:100px; margin-top:24px;
+            padding:16px; border:2px solid #e5e7eb; border-radius:10px; font-size:1rem; background:#f9fafb; box-sizing:border-box;"></textarea>
+          
+          <button id="copy-font-btn" style="width:100%; margin-top:16px; padding:12px; background:#0ea5e9;
+            color:white; border:none; border-radius:8px; font-weight:600; cursor:pointer;">
+            변환된 텍스트 복사
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__content">
+          <div class="site-footer__section">
+            <div class="site-footer__logo">🐸 EmojiRibbit</div>
+            <p class="site-footer__description">세상의 모든 이모지를 한 곳에서. 완전 무료.</p>
+          </div>
+          <div class="site-footer__section">
+            <h3 class="site-footer__heading">서비스</h3>
+            <ul class="site-footer__list">
+              <li><a href="dictionary.html">이모지 사전</a></li>
+              <li><a href="copy-tool.html">복사 도구</a></li>
+              <li><a href="trends.html">세대별 트렌드</a></li>
+              <li><a href="fortune.html">이모지 운세</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__section">
+            <h3 class="site-footer__heading">정보</h3>
+            <ul class="site-footer__list">
+              <li><a href="privacy.html">개인정보처리방침</a></li>
+              <li><a href="terms.html">이용약관</a></li>
+              <li><a href="about.html">소개</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p>&copy; 2025 EmojiRibbit · All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/page-transition.js"></script>
+    <script src="assets/js/pages/mbti-emoji.js"></script>
+  </body>
+</html>
