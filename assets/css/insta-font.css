@@ -7,7 +7,7 @@
 }
 
 .insta-font-container {
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -82,6 +82,8 @@
   padding: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .insta-font-input-card:hover {
@@ -98,8 +100,39 @@
 .insta-font-input-card__title {
   font-size: 18px;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   color: var(--text-primary);
+}
+
+/* Language Support Notice */
+.insta-font-notice {
+  background: rgba(102, 126, 234, 0.1);
+  border-left: 4px solid #667eea;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.insta-font-notice__text {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.insta-font-notice__text strong {
+  color: #667eea;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .insta-font-notice {
+    padding: 10px 12px;
+  }
+
+  .insta-font-notice__text {
+    font-size: 13px;
+  }
 }
 
 .insta-font-input {
@@ -156,88 +189,116 @@
 }
 
 .insta-font-results-container {
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .insta-font-results-title {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   color: var(--text-primary);
 }
 
-/* Results List */
+/* Results List - 4 Column Grid */
 .insta-font-results-list {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
   animation: slideUp 0.5s ease-in-out;
 }
 
-/* Result Card */
+/* Responsive Grid Layout */
+@media (max-width: 1200px) {
+  .insta-font-results-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .insta-font-results-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .insta-font-results-list {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+/* Result Card - Vertical Layout */
 .insta-font-result-card {
   background: var(--bg-color-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 20px;
+  padding: 16px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   transition: all 0.3s ease;
+  min-height: 180px;
+  cursor: pointer;
 }
 
 .insta-font-result-card:hover {
   border-color: #667eea;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
-  transform: translateX(4px);
-}
-
-@media (max-width: 768px) {
-  .insta-font-result-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.2);
+  transform: translateY(-4px);
+  background: var(--bg-color-primary);
 }
 
 .insta-font-result-content {
+  width: 100%;
   flex: 1;
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .insta-font-result-label {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #999;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .insta-font-result-text {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   color: var(--text-primary);
-  word-break: break-all;
+  word-break: break-word;
   font-family: 'Monaco', 'Courier New', monospace;
-  line-height: 1.4;
+  line-height: 1.3;
+  min-height: 40px;
   max-height: 60px;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .insta-font-result-copy-btn {
-  padding: 10px 16px;
-  font-size: 14px;
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 13px;
   font-weight: 600;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .insta-font-result-copy-btn:hover {
@@ -247,12 +308,6 @@
 
 .insta-font-result-copy-btn:active {
   transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-  .insta-font-result-copy-btn {
-    width: 100%;
-  }
 }
 
 /* Empty State */
@@ -283,7 +338,7 @@
   border: 2px solid var(--border-color);
   border-radius: 16px;
   padding: 30px;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   transition: all 0.3s ease;
 }
@@ -344,6 +399,10 @@
     background: #1a1a1a;
     border-color: #444;
   }
+
+  .insta-font-notice {
+    background: rgba(102, 126, 234, 0.15);
+  }
 }
 
 /* Dark mode toggle active state */
@@ -370,6 +429,14 @@ body.dark-mode .insta-font-result-card {
   border-color: #444;
 }
 
+body.dark-mode .insta-font-result-card:hover {
+  background: #333;
+}
+
+body.dark-mode .insta-font-notice {
+  background: rgba(102, 126, 234, 0.15);
+}
+
 /* ==================== Animations ==================== */
 @keyframes fadeIn {
   from {
@@ -388,28 +455,5 @@ body.dark-mode .insta-font-result-card {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* ==================== Responsive Design ==================== */
-@media (max-width: 768px) {
-  .insta-font-container {
-    padding: 0 16px;
-  }
-
-  .insta-font-input {
-    min-height: 80px;
-  }
-
-  .insta-font-results-list {
-    gap: 12px;
-  }
-
-  .insta-font-result-card {
-    padding: 16px;
-  }
-
-  .insta-font-result-text {
-    font-size: 16px;
   }
 }
