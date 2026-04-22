@@ -95,71 +95,30 @@
     }
   }
 
-  // ===== Emoji Items Copy 기능 =====
-  document.addEventListener("DOMContentLoaded", () => {
-    // 이모지 아이템 클릭 시 복사
-    document.querySelectorAll(".emoji-item").forEach((item) => {
-      item.addEventListener("click", () => {
-        const emoji = item.querySelector(".emoji-item__emoji").textContent;
-        
-        navigator.clipboard
-          .writeText(emoji)
-          .then(() => {
-            showToast(item, "복사됨 ✅");
-          })
-          .catch((err) => {
-            console.error("복사 실패:", err);
-          });
-      });
-    });
-
-    // Generation card 이모지 클릭 시 복사
-    document.querySelectorAll(".generation-card__emojis span").forEach((span) => {
-      span.style.cursor = "pointer";
-      span.addEventListener("click", (e) => {
-        const emoji = e.target.textContent;
-        
-        navigator.clipboard
-          .writeText(emoji)
-          .then(() => {
-            const card = e.target.closest(".generation-card");
-            showToast(card, "복사됨!");
-          })
-          .catch((err) => {
-            console.error("복사 실패:", err);
-          });
-      });
-    });
-  });
-
-  // Toast 메시지 함수
-  function showToast(element, message) {
+  // Toast 메시지 함수 (전역)
+  function showToastMessage(message) {
     const toast = document.createElement("div");
-    toast.style.cssText = `
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #ec4899 70%, #f97316 100%);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      z-index: 1000;
-      white-space: nowrap;
-      animation: slideDown 0.3s ease-out;
-    `;
     toast.textContent = message;
-
-    const parent = element.style.position === "static" ? element.parentElement : element;
-    parent.style.position = "relative";
-    parent.appendChild(toast);
-
+    toast.style.cssText = `
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #667eea, #ec4899);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      animation: slideIn 0.3s ease-out;
+    `;
+    
+    document.body.appendChild(toast);
+    
     setTimeout(() => {
-      toast.style.animation = "slideUp 0.3s ease-out forwards";
+      toast.style.animation = "slideOut 0.3s ease-out";
       setTimeout(() => toast.remove(), 300);
-    }, 800);
+    }, 1500);
   }
 
   // 검색 기능
@@ -218,7 +177,7 @@
     }
   });
 
-  // Stats 숫자 카운트업 애니메이션
+  // Stats 숫자 카운트업 애니메이션 및 복사 기능
   document.addEventListener("DOMContentLoaded", () => {
     const statsCards = document.querySelectorAll(".stat-card__number");
 
@@ -229,7 +188,7 @@
         if (emojiSpan) {
           const emoji = emojiSpan.textContent;
           navigator.clipboard.writeText(emoji).then(() => {
-            showToast(`"${emoji}" 복사됨!`);
+            showToastMessage("\"" + emoji + "\" 복사됨!");
           });
         }
       }
@@ -241,7 +200,7 @@
         const emoji = e.target.getAttribute("data-emoji");
         if (emoji) {
           navigator.clipboard.writeText(emoji).then(() => {
-            showToast(`"${emoji}" 복사됨!`);
+            showToastMessage("\"" + emoji + "\" 복사됨!");
           });
         }
       }
@@ -268,54 +227,30 @@
           }, 1500);
           
           // 토스트 메시지 표시
-          showToast(`"${emojis}" 복사됨!`);
+          showToastMessage("\"" + emojis + "\" 복사됨!");
         }).catch(() => {
-          showToast("복사 실패. 다시 시도해주세요.");
+          showToastMessage("복사 실패. 다시 시도해주세요.");
         });
       }
     });
 
-    function showToast(message) {
-      const toast = document.createElement("div");
-      toast.textContent = message;
-      toast.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: linear-gradient(135deg, #667eea, #ec4899);
-        color: white;
-        padding: 16px 24px;
-        border-radius: 8px;
-        font-weight: 600;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        animation: slideIn 0.3s ease-out;
-      `;
-      
-      document.body.appendChild(toast);
-      
-      setTimeout(() => {
-        toast.style.animation = "slideOut 0.3s ease-out";
-        setTimeout(() => toast.remove(), 300);
-      }, 1500);
-    }
-      const observerOptions = {
-        threshold: 0.5,
-      };
+    // Stats 숫자 애니메이션
+    const observerOptions = {
+      threshold: 0.5,
+    };
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !entry.target.dataset.animated) {
-            entry.target.dataset.animated = "true";
-            animateNumber(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      statsCards.forEach((card) => {
-        observer.observe(card);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+          entry.target.dataset.animated = "true";
+          animateNumber(entry.target);
+        }
       });
-    }
+    }, observerOptions);
+
+    statsCards.forEach((card) => {
+      observer.observe(card);
+    });
 
     function animateNumber(element) {
       const text = element.textContent;

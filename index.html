@@ -6,24 +6,24 @@
     <title>EmojiRibbit - 쉽고 빠른 이모지 복사 & 붙여넣기</title>
     <meta
       name="description"
-      content="3,600+개의 다양한 이모지와 특수문자를 한 번의 클릭으로 복사하세요. 블로거와 SNS 크리에이터를 위한 완벽한 도구!"
+      content="3,600+개의 다양한 이모지와 특수문자를 한 번의 클릭으로 복사하세요. 이모지 의미 사전, 감정 이모지, 세대별 트렌드까지! 블로거와 SNS 크리에이터를 위한 완벽한 도구!"
     />
 
     <!-- ================== 기본 메타 태그 (SEO) ================== -->
     <meta name="title" content="EmojiRibbit - 쉽고 빠른 이모지 복사 & 붙여넣기">
-    <meta name="keywords" content="이모지, 특수문자, 복사, 이모지 사전, 이모지 도구, 해시태그, 데코폰트, 운세">
+    <meta name="keywords" content="이모지 복사, 특수문자 복사, 이모지 사이트, 이모지 의미, 감정 이모지, 이모지 도구, 이모지 사전, 해시태그, 데코폰트, 운세">
     <meta name="author" content="EmojiRibbit">
     <meta name="robots" content="index, follow">
 
     <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
     <meta property="og:title" content="EmojiRibbit - 쉽고 빠른 이모지 복사 & 붙여넣기">
-    <meta property="og:description" content="3,600+개의 다양한 이모지와 특수문자를 한 번의 클릭으로 복사하세요. 블로거와 SNS 크리에이터를 위한 완벽한 도구!">
+    <meta property="og:description" content="3,600+개의 이모지 & 특수문자 한 클릭 복사. 이모지 의미, 감정 표현, 세대별 트렌드 분석. 무료 이모지 도구!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://emojiribbit.com">
     <meta property="og:image" content="https://emojiribbit.com/assets/images/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="EmojiRibbit 이모지 도구">
+    <meta property="og:image:alt" content="EmojiRibbit 이모지 복사 도구">
     <meta property="og:site_name" content="EmojiRibbit">
     <meta property="og:locale" content="ko_KR">
 
@@ -33,11 +33,10 @@
     <meta name="twitter:description" content="3,600+개의 다양한 이모지와 특수문자를 한 번의 클릭으로 복사하세요.">
     <meta name="twitter:image" content="https://emojiribbit.com/assets/images/twitter-image.png">
     <meta name="twitter:image:alt" content="EmojiRibbit 이모지 도구">
+    <meta name="twitter:site" content="@EmojiRibbit">
+    <meta name="twitter:creator" content="@EmojiRibbit">
 
     <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
-    <meta name="language" content="ko">
-    <meta name="distribution" content="global">
-    <meta name="rating" content="general">
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="https://emojiribbit.com">
 
@@ -48,17 +47,445 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="EmojiRibbit">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/icon/favicon.ico" />
-    <link rel="icon" type="image/png" href="assets/images/icon/favicon.png" />
+    <!-- ================== 아이콘 및 리소스 링크 ================== -->
+    <link rel="icon" href="assets/images/icon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/images/icon/apple-touch-icon.png">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="assets/css/commons.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+      .seo-content-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.04) 0%, rgba(118, 75, 162, 0.04) 100%);
+        border-top: 1px solid rgba(232, 232, 232, 0.5);
+      }
+
+      .seo-content-wrapper {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .seo-section-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #333;
+        text-align: center;
+        margin-bottom: 60px;
+        letter-spacing: -0.5px;
+      }
+
+      .seo-articles {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      .seo-article {
+        padding: 36px 40px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 2px 12px rgba(102, 126, 234, 0.08);
+        transition: box-shadow 0.3s ease;
+      }
+
+      .seo-article:hover {
+        box-shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+      }
+
+      .seo-article h3 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #667eea;
+        margin: 0 0 20px 0;
+        line-height: 1.3;
+      }
+
+      .seo-article p {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #555;
+        margin: 0 0 18px 0;
+        letter-spacing: 0.2px;
+      }
+
+      .seo-article p:last-child {
+        margin-bottom: 0;
+      }
+
+      .faq-section {
+        padding: 80px 0;
+        background: white;
+        border-top: 1px solid #f0f0f0;
+      }
+
+      .faq-wrapper {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .faq-section-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #333;
+        text-align: center;
+        margin-bottom: 60px;
+        letter-spacing: -0.5px;
+      }
+
+      .faq-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .faq-item {
+        padding: 32px 36px;
+        background: #f8f9fc;
+        border-radius: 16px;
+        border-left: 4px solid #667eea;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        background: #f0f2fa;
+        border-left-color: #764ba2;
+      }
+
+      .faq-question-title {
+        font-size: 17px;
+        font-weight: 600;
+        color: #333;
+        margin: 0 0 14px 0;
+        line-height: 1.4;
+      }
+
+      .faq-answer-text {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #555;
+        margin: 0;
+        letter-spacing: 0.2px;
+      }
+
+      @media (max-width: 768px) {
+        .seo-content-section {
+          padding: 60px 0;
+        }
+
+        .seo-content-wrapper {
+          padding: 0 20px;
+        }
+
+        .seo-section-title {
+          font-size: 28px;
+          margin-bottom: 48px;
+        }
+
+        .seo-articles {
+          gap: 32px;
+        }
+
+        .seo-article {
+          padding: 28px 24px;
+          border-radius: 16px;
+        }
+
+        .seo-article h3 {
+          font-size: 19px;
+          margin-bottom: 16px;
+        }
+
+        .seo-article p {
+          font-size: 14px;
+          line-height: 1.7;
+          margin-bottom: 14px;
+        }
+
+        .faq-section {
+          padding: 60px 0;
+        }
+
+        .faq-wrapper {
+          padding: 0 20px;
+        }
+
+        .faq-section-title {
+          font-size: 28px;
+          margin-bottom: 48px;
+        }
+
+        .faq-list {
+          gap: 12px;
+        }
+
+        .faq-item {
+          padding: 24px 20px;
+          border-radius: 12px;
+        }
+
+        .faq-question-title {
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
+
+        .faq-answer-text {
+          font-size: 14px;
+          line-height: 1.7;
+        }
+      }
+
+      .adfit-section {
+        padding: 40px 0;
+        background: white;
+        text-align: center;
+        border-top: 1px solid #f0f0f0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .adfit-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 280px;
+      }
+
+      .kakao_ad_area {
+        display: inline-block;
+      }
+
+      @media (max-width: 768px) {
+        .adfit-section {
+          padding: 30px 0;
+        }
+
+        .adfit-wrapper {
+          min-height: 250px;
+        }
+      }
+
+      .seo-guides-section {
+        padding: 80px 0;
+        background: white;
+        border-top: 1px solid #f0f0f0;
+      }
+
+      .guides-section-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #333;
+        text-align: center;
+        margin-bottom: 60px;
+        letter-spacing: -0.5px;
+      }
+
+      .guides-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .guide-card {
+        background: white;
+        border: 2px solid #e8e8e8;
+        border-radius: 20px;
+        padding: 32px;
+        text-align: center;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .guide-card:hover {
+        border-color: #667eea;
+        box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+        transform: translateY(-4px);
+      }
+
+      .guide-icon {
+        font-size: 48px;
+        margin-bottom: 16px;
+      }
+
+      .guide-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+        margin: 0 0 16px 0;
+        line-height: 1.4;
+      }
+
+      .guide-summary {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #555;
+        margin: 0 0 24px 0;
+        flex-grow: 1;
+      }
+
+      .guide-link {
+        display: inline-block;
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: color 0.3s;
+      }
+
+      .guide-link:hover {
+        color: #764ba2;
+      }
+
+      .faq-more-link {
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .faq-link {
+        display: inline-block;
+        padding: 12px 32px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 15px;
+        transition: transform 0.3s;
+      }
+
+      .faq-link:hover {
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        .guides-section-title {
+          font-size: 28px;
+          margin-bottom: 40px;
+        }
+
+        .guides-grid {
+          gap: 24px;
+          padding: 0 20px;
+        }
+
+        .guide-card {
+          padding: 24px;
+        }
+
+        .guide-icon {
+          font-size: 40px;
+          margin-bottom: 12px;
+        }
+
+        .guide-title {
+          font-size: 18px;
+          margin-bottom: 12px;
+        }
+
+        .guide-summary {
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "EmojiRibbit",
+      "description": "3,600+개의 이모지 및 특수문자 복사 도구. 이모지 의미 사전, 감정 이모지, 세대별 트렌드 분석 무료 제공",
+      "url": "https://emojiribbit.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://emojiribbit.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "EmojiRibbit",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0"
+        }
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "이모지 복사는 어떻게 사용하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EmojiRibbit에서 원하는 이모지를 찾아 클릭하면 자동으로 복사됩니다. 카카오톡, 인스타그램, 트위터 등 모든 SNS와 메신저에 바로 붙여넣기(Ctrl+V)하면 됩니다. 특수문자도 동일한 방식으로 사용할 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "이모지 의미를 어디서 확인할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "이모지 사전 페이지에서 3,600개 이상의 모든 이모지에 대한 정확한 의미, 유래, 사용 맥락을 한국어와 영어로 확인할 수 있습니다. 각 이모지의 감정 카테고리와 세대별 인기도도 함께 제공됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "감정 이모지는 어떻게 선택하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "복사 도구에서 '감정' 카테고리를 선택하면 행복, 슬픔, 분노, 놀람 등 다양한 감정 이모지를 한눈에 볼 수 있습니다. 당신의 현재 감정을 표현하는 이모지를 선택해 한 번의 클릭으로 복사할 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "특수문자를 어디에 사용할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "특수문자는 SNS 게시물, 블로그 댓글, 이메일, 채팅 메시지, 프로필 꾸미기 등 다양한 곳에 사용됩니다. EmojiRibbit에서 제공하는 특수문자 복사 도구를 통해 원하는 문자를 쉽게 찾아 복사할 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "세대별 이모지 트렌드는 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "알파세대, Z세대, 밀레니얼, X세대별로 가장 많이 사용하는 이모지가 다릅니다. EmojiRibbit의 세대별 트렌드 섹션에서 각 세대의 TOP 30 이모지를 확인하고, 세대를 이해하는 데 도움을 받을 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "이모지 운세는 어떻게 진행되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "현재 당신의 감정을 가장 잘 표현하는 이모지를 선택하면, 그 이모지에 맞춘 오늘의 운세와 특별한 메시지를 받게 됩니다. 재미있는 운세를 통해 감정을 표현하고 기분을 전환해보세요."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
 
   <body>
@@ -73,10 +500,10 @@
 
           <!-- Desktop Navigation -->
           <nav class="site-nav" data-nav role="navigation" aria-label="메인 메뉴">
-            <a href="dictionary.html" class="site-nav__link" aria-label="이모지 사전">
+            <a href="dictionary.html" class="site-nav__link" aria-label="이모지 사전 - 3600개 이모지의 정확한 의미 확인">
               📖 이모지 사전
             </a>
-            <a href="copy-tool.html" class="site-nav__link" aria-label="복사 도구">
+            <a href="copy-tool.html" class="site-nav__link" aria-label="이모지 복사 도구 - 감정 이모지 한 클릭 복사">
               📋 복사 도구
             </a>
             <div class="site-nav-group">
@@ -95,13 +522,13 @@
                 • 도트 아트
               </a>
             </div>
-            <a href="fortune.html" class="site-nav__link" aria-label="이모지 운세">
+            <a href="fortune.html" class="site-nav__link" aria-label="이모지 운세 보기">
               🔮 이모지 운세
             </a>
           </nav>
 
           <!-- Search Bar (Desktop) -->
-          <div class="search-wrapper" role="search">
+          <div class="search-wrapper" role="search" aria-label="이모지 검색">
             <input
               type="search"
               class="search-input"
@@ -142,12 +569,12 @@
 
       <img
         src="assets/images/icon/bg-img1.png"
-        alt="귀여운 캐릭터"
+        alt="이모지 복사 도구를 상징하는 귀여운 캐릭터 일러스트"
         class="hero__character hero__character--left"
       />
       <img
         src="assets/images/icon/bg-img2.png"
-        alt="귀여운 캐릭터"
+        alt="감정 이모지를 활용한 캐릭터 배경 그래픽"
         class="hero__character hero__character--right"
       />
 
@@ -200,10 +627,10 @@
           </p>
 
           <div class="hero__buttons" data-aos="fade-up" data-aos-delay="400">
-            <a href="dictionary.html" class="btn btn--primary-gradient">
+            <a href="dictionary.html" class="btn btn--primary-gradient" aria-label="이모지 사전 보기 - 이모지 의미와 사용법 확인">
               📖 이모지 사전 보기
             </a>
-            <a href="fortune.html" class="btn btn--secondary-glow">
+            <a href="fortune.html" class="btn btn--secondary-glow" aria-label="오늘의 이모지 운세 보기">
               🔮 오늘의 운세 보기
             </a>
           </div>
@@ -227,63 +654,67 @@
 
         <div class="features__grid">
           <!-- Feature 1: Dictionary -->
-          <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
             <div class="feature-card__icon">📖</div>
             <h3 class="feature-card__title">이모지 의미 사전</h3>
             <p class="feature-card__description">
-              3,600개+ 이모지의 정확한 의미, 유래, 세대별 사용법을 한국어·영어로 설명해드려요.
+              3,600개+ 이모지의 정확한 의미, 유래, 세대별 사용법을 한국어·영어로 설명해드려요. 감정 이모지부터 특수문자까지 모든 정보를 제공합니다.
             </p>
-            <a href="dictionary.html" class="feature-card__link">사전 보기 →</a>
-          </div>
+            <a href="dictionary.html" class="feature-card__link" aria-label="이모지 의미 사전으로 이동">사전 보기 →</a>
+          </article>
 
           <!-- Feature 2: Copy Tool -->
-          <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
             <div class="feature-card__icon">📋</div>
             <h3 class="feature-card__title">카테고리별 복사 도구</h3>
             <p class="feature-card__description">
-              감정, 직업, MBTI, 계절, 세대별로 이모지 세트를 원클릭 복사. SNS·메신저에 바로 붙여넣기!
+              감정, 직업, MBTI, 계절, 세대별로 이모지 세트를 원클릭 복사. SNS·메신저에 바로 붙여넣기! 특수문자 복사도 한 번에 가능합니다.
             </p>
-            <a href="copy-tool.html" class="feature-card__link">복사 도구 열기 →</a>
-          </div>
+            <a href="copy-tool.html" class="feature-card__link" aria-label="이모지 복사 도구로 이동">복사 도구 열기 →</a>
+          </article>
 
           <!-- Feature 3: Fortune -->
-          <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
             <div class="feature-card__icon">🔮</div>
             <h3 class="feature-card__title">이모지 감정 운세</h3>
             <p class="feature-card__description">
-              지금 내 감정을 이모지로 선택하면 오늘의 운세와 메시지를 알려드려요.
+              지금 내 감정을 이모지로 선택하면 오늘의 운세와 메시지를 알려드려요. 감정 표현과 함께 재미있는 운세를 경험해보세요.
             </p>
-            <a href="fortune.html" class="feature-card__link">운세 보기 →</a>
-          </div>
+            <a href="fortune.html" class="feature-card__link" aria-label="이모지 운세 보기로 이동">운세 보기 →</a>
+          </article>
 
           <!-- Feature 4: Trends -->
-          <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="400">
             <div class="feature-card__icon">🧬</div>
             <h3 class="feature-card__title">세대별 이모지 트렌드</h3>
             <p class="feature-card__description">
-              알파·Z·밀레니얼·X세대가 가장 많이 쓰는 이모지 TOP 30. 세대를 이해하는 가장 재미있는 방법.
+              알파·Z·밀레니얼·X세대가 가장 많이 쓰는 이모지 TOP 30. 세대를 이해하는 가장 재미있는 방법. 세대별 선호도를 분석합니다.
             </p>
-            <a href="trends.html" class="feature-card__link">트렌드 보기 →</a>
-          </div>
+            <a href="trends.html" class="feature-card__link" aria-label="세대별 이모지 트렌드 보기로 이동">트렌드 보기 →</a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Kakao AdFit Advertisement -->
-    <div class="kakao-ad-container">
-      <ins class="kakao_ad_area" style="display:none;"
-      data-ad-unit = "DAN-vplpvxOSROG0Fz7S"
-      data-ad-width = "300"
-      data-ad-height = "250"></ins>
+    <!-- Kakao AdFit Advertisement Section -->
+    <section class="adfit-section">
+      <div class="container">
+        <div class="adfit-wrapper">
+          <ins class="kakao_ad_area"
+            data-ad-unit="DAN-vplpvxOSROG0Fz7S"
+            data-ad-width="300"
+            data-ad-height="250"></ins>
+        </div>
+      </div>
       <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    </div>
+    </section>
 
     <!-- Most Used Right Now Section -->
     <section class="most-used" id="most-used">
       <div class="container">
         <div class="most-used__header" data-aos="fade-up">
           <h2 class="most-used__title">🔥 지금 가장 많이 쓰는 이모지</h2>
-          <a href="#" class="most-used__link">전체 보기 →</a>
+          <a href="dictionary.html" class="most-used__link" aria-label="전체 이모지 보기">전체 보기 →</a>
         </div>
 
         <div class="emoji-grid most-used__grid">
@@ -332,7 +763,7 @@
 
         <div class="generations__grid">
           <!-- Alpha Generation -->
-          <div class="generation-card" data-aos="fade-up" data-aos-delay="100">
+          <article class="generation-card" data-aos="fade-up" data-aos-delay="100">
             <div class="generation-card__label">알파세대 (2010~)</div>
             <div class="generation-card__emojis">
               <span>🧿</span>
@@ -340,10 +771,10 @@
               <span>🎧</span>
               <span>📱</span>
             </div>
-          </div>
+          </article>
 
           <!-- Gen Z -->
-          <div class="generation-card" data-aos="fade-up" data-aos-delay="200">
+          <article class="generation-card" data-aos="fade-up" data-aos-delay="200">
             <div class="generation-card__label">Z세대 (1997~2009)</div>
             <div class="generation-card__emojis">
               <span>💀</span>
@@ -351,10 +782,10 @@
               <span>👽</span>
               <span>🌶️</span>
             </div>
-          </div>
+          </article>
 
           <!-- Millennial -->
-          <div class="generation-card" data-aos="fade-up" data-aos-delay="300">
+          <article class="generation-card" data-aos="fade-up" data-aos-delay="300">
             <div class="generation-card__label">밀레니얼 (1981~1996)</div>
             <div class="generation-card__emojis">
               <span>😂</span>
@@ -362,10 +793,10 @@
               <span>🙏</span>
               <span>✨</span>
             </div>
-          </div>
+          </article>
 
           <!-- Gen X -->
-          <div class="generation-card" data-aos="fade-up" data-aos-delay="400">
+          <article class="generation-card" data-aos="fade-up" data-aos-delay="400">
             <div class="generation-card__label">X세대 (1965~1980)</div>
             <div class="generation-card__emojis">
               <span>😊</span>
@@ -373,7 +804,7 @@
               <span>💼</span>
               <span>📞</span>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -430,7 +861,7 @@
             </div>
             <h3 class="combination-card__title">슬픔 표현</h3>
             <p class="combination-card__description">진심 어린 슬픔의 감정</p>
-            <button class="combination-card__copy-btn" data-emojis="😭💔😞">복사</button>
+            <button class="combination-card__copy-btn" data-emojis="😭💔😞" aria-label="슬픔 감정 이모지 복사">복사</button>
           </div>
 
           <!-- Combination 2 -->
@@ -440,7 +871,7 @@
             </div>
             <h3 class="combination-card__title">축제 분위기</h3>
             <p class="combination-card__description">즐거움과 축하의 순간</p>
-            <button class="combination-card__copy-btn" data-emojis="🎉🎊✨">복사</button>
+            <button class="combination-card__copy-btn" data-emojis="🎉🎊✨" aria-label="축하 감정 이모지 복사">복사</button>
           </div>
 
           <!-- Combination 3 -->
@@ -450,7 +881,7 @@
             </div>
             <h3 class="combination-card__title">멋진 분위기</h3>
             <p class="combination-card__description">자신감 넘치는 표현</p>
-            <button class="combination-card__copy-btn" data-emojis="🔥💪😎">복사</button>
+            <button class="combination-card__copy-btn" data-emojis="🔥💪😎" aria-label="자신감 감정 이모지 복사">복사</button>
           </div>
 
           <!-- Combination 4 -->
@@ -460,7 +891,7 @@
             </div>
             <h3 class="combination-card__title">사랑 표현</h3>
             <p class="combination-card__description">깊은 감정의 표현</p>
-            <button class="combination-card__copy-btn" data-emojis="😍💕💗">복사</button>
+            <button class="combination-card__copy-btn" data-emojis="😍💕💗" aria-label="사랑 감정 이모지 복사">복사</button>
           </div>
 
           <!-- Combination 5 -->
@@ -470,7 +901,7 @@
             </div>
             <h3 class="combination-card__title">혼란 표현</h3>
             <p class="combination-card__description">애매한 상황 표현</p>
-            <button class="combination-card__copy-btn" data-emojis="🤔🤷😅">복사</button>
+            <button class="combination-card__copy-btn" data-emojis="🤔🤷😅" aria-label="혼란 감정 이모지 복사">복사</button>
           </div>
 
           <!-- Combination 6 -->
@@ -480,7 +911,69 @@
             </div>
             <h3 class="combination-card__title">반짝임</h3>
             <p class="combination-card__description">특별한 것 표현</p>
-            <button class="combination-card__copy-btn" data-emojis="🌟💫⭐">복사</button>
+            <button class="combination-card__copy-btn" data-emojis="🌟💫⭐" aria-label="반짝임 감정 이모지 복사">복사</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Guides Section -->
+    <section class="seo-guides-section" id="guides">
+      <div class="container">
+        <h2 class="guides-section-title" data-aos="fade-up">더 자세한 가이드</h2>
+        
+        <div class="guides-grid">
+          <article class="guide-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="guide-icon">📚</div>
+            <h3 class="guide-title">이모지 복사 완벽 가이드</h3>
+            <p class="guide-summary">이모지 복사의 중요성부터 실제 활용법까지, 현대 디지털 커뮤니케이션에서 감정 표현을 더 풍부하게 만드는 방법을 배워보세요.</p>
+            <a href="emoji-guide.html" class="guide-link" aria-label="이모지 복사 완벽 가이드 보기">자세히 보기 →</a>
+          </article>
+
+          <article class="guide-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="guide-icon">✨</div>
+            <h3 class="guide-title">특수문자 활용 가이드</h3>
+            <p class="guide-summary">화살표, 체크 마크, 별, 하트 등 다양한 특수문자의 활용법과 SNS 프로필 꾸미기에서 콘텐츠 장식까지 창의적인 사용 방법을 알아봅시다.</p>
+            <a href="special-characters.html" class="guide-link" aria-label="특수문자 활용 가이드 보기">자세히 보기 →</a>
+          </article>
+
+          <article class="guide-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="guide-icon">💡</div>
+            <h3 class="guide-title">이모지 의미와 표현력</h3>
+            <p class="guide-summary">이모지의 정확한 의미 이해부터 감정 이모지를 통한 표현력 향상까지, 이모지를 올바르게 사용하는 모든 것을 배워보세요.</p>
+            <a href="emoji-meaning.html" class="guide-link" aria-label="이모지 의미와 표현력 가이드 보기">자세히 보기 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="faq-wrapper">
+          <h2 class="faq-section-title">자주 묻는 질문 (FAQ)</h2>
+          
+          <ul class="faq-list">
+            <li class="faq-item">
+              <h3 class="faq-question-title">이모지 복사는 어떻게 사용하나요?</h3>
+              <p class="faq-answer-text">EmojiRibbit의 복사 도구에서 원하는 이모지를 찾아 클릭하면 자동으로 복사됩니다. 그 후 카카오톡, 인스타그램, 트위터, 페이스북 등 모든 SNS와 메신저에 바로 붙여넣기(Ctrl+V 또는 Cmd+V)하면 됩니다. 특수문자도 동일한 방식으로 사용할 수 있으며, 카테고리별 이모지 세트를 한 번에 복사할 수도 있습니다.</p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-question-title">이모지 의미를 어디서 확인할 수 있나요?</h3>
+              <p class="faq-answer-text">이모지 사전 페이지에서 3,600개 이상의 모든 이모지에 대한 정확한 의미, 유래, 사용 맥락을 한국어와 영어로 확인할 수 있습니다. 각 이모지의 감정 카테고리, 세대별 인기도, 플랫폼별 표현 방식도 함께 제공되므로 이모지를 더욱 정확하게 이해할 수 있습니다.</p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-question-title">감정 이모지는 어떻게 선택하나요?</h3>
+              <p class="faq-answer-text">복사 도구에서 '감정' 카테고리를 선택하면 행복, 슬픔, 분노, 놀람 등 다양한 감정 이모지를 한눈에 볼 수 있습니다. 당신의 현재 감정을 가장 잘 표현하는 이모지를 선택해 한 번의 클릭으로 복사할 수 있으며, 각 감정 이모지의 의미는 이모지 사전에서 상세하게 확인할 수 있습니다.</p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-question-title">세대별 이모지 트렌드는 무엇인가요?</h3>
+              <p class="faq-answer-text">알파세대(2010~), Z세대(1997~2009), 밀레니얼(1981~1996), X세대(1965~1980)별로 가장 많이 사용하는 이모지가 다릅니다. EmojiRibbit의 세대별 트렌드 섹션에서 각 세대의 TOP 30 이모지를 확인할 수 있으며, 이를 통해 세대를 이해하고 마케팅 전략을 수립할 수 있습니다.</p>
+            </li>
+          </ul>
+          
+          <div class="faq-more-link">
+            <a href="emoji-guide.html" class="faq-link">더 많은 질문 답변 보기 →</a>
           </div>
         </div>
       </div>
@@ -492,14 +985,14 @@
         <div class="cta-section__content" data-aos="fade-up">
           <h2 class="cta-section__title">이모지로 감정을 더 풍부하게</h2>
           <p class="cta-section__description">
-            매일 새로운 이모지를 발견하고, 정확한 의미를 알아보세요.
+            매일 새로운 이모지를 발견하고, 정확한 의미를 알아보세요. EmojiRibbit과 함께 당신의 표현력을 한 단계 업그레이드하세요.
           </p>
 
           <div class="cta-section__buttons">
-            <a href="dictionary.html" class="btn btn--primary-gradient" data-aos="fade-up" data-aos-delay="100">
+            <a href="dictionary.html" class="btn btn--primary-gradient" data-aos="fade-up" data-aos-delay="100" aria-label="이모지 사전 시작하기">
               📖 이모지 사전 시작
             </a>
-            <a href="copy-tool.html" class="btn btn--secondary-glow" data-aos="fade-up" data-aos-delay="200">
+            <a href="copy-tool.html" class="btn btn--secondary-glow" data-aos="fade-up" data-aos-delay="200" aria-label="이모지 복사 도구 열기">
               📋 복사 도구 열기
             </a>
           </div>
@@ -514,43 +1007,43 @@
           <div class="site-footer__section">
             <div class="site-footer__logo">🐸 EmojiRibbit</div>
             <p class="site-footer__description">
-              세상의 모든 이모지를 한 곳에서. 의미 사전, 복사 도구, 세대별 트렌드, 이모지 운세까지 완전 무료.
+              세상의 모든 이모지를 한 곳에서. 이모지 의미 사전, 이모지 복사 도구, 감정 이모지, 특수문자, 세대별 트렌드, 이모지 운세까지 완전 무료.
             </p>
           </div>
 
           <div class="site-footer__section">
             <h3 class="site-footer__heading">서비스</h3>
             <ul class="site-footer__list">
-              <li><a href="dictionary.html">이모지 사전</a></li>
-              <li><a href="copy-tool.html">복사 도구</a></li>
-              <li><a href="fortune.html">이모지 운세</a></li>
-              <li><a href="trends.html">세대별 트렌드</a></li>
+              <li><a href="dictionary.html" aria-label="이모지 사전으로 이동">이모지 사전</a></li>
+              <li><a href="copy-tool.html" aria-label="이모지 복사 도구로 이동">복사 도구</a></li>
+              <li><a href="fortune.html" aria-label="이모지 운세로 이동">이모지 운세</a></li>
+              <li><a href="trends.html" aria-label="세대별 트렌드로 이동">세대별 트렌드</a></li>
             </ul>
           </div>
 
           <div class="site-footer__section">
             <h3 class="site-footer__heading">카테고리</h3>
             <ul class="site-footer__list">
-              <li><a href="#">감정 이모지</a></li>
-              <li><a href="#">자연 이모지</a></li>
-              <li><a href="#">음식 이모지</a></li>
-              <li><a href="#">MBTI 이모지</a></li>
+              <li><a href="copy-tool.html?category=emotion" aria-label="감정 이모지 카테고리">감정 이모지</a></li>
+              <li><a href="copy-tool.html?category=nature" aria-label="자연 이모지 카테고리">자연 이모지</a></li>
+              <li><a href="copy-tool.html?category=food" aria-label="음식 이모지 카테고리">음식 이모지</a></li>
+              <li><a href="copy-tool.html?category=mbti" aria-label="MBTI 이모지 카테고리">MBTI 이모지</a></li>
             </ul>
           </div>
 
           <div class="site-footer__section">
             <h3 class="site-footer__heading">정보</h3>
             <ul class="site-footer__list">
-              <li><a href="privacy.html">개인정보처리방침</a></li>
-              <li><a href="terms.html">이용약관</a></li>
-              <li><a href="about.html">소개</a></li>
+              <li><a href="privacy.html" aria-label="개인정보처리방침">개인정보처리방침</a></li>
+              <li><a href="terms.html" aria-label="이용약관">이용약관</a></li>
+              <li><a href="about.html" aria-label="소개 페이지">소개</a></li>
             </ul>
           </div>
         </div>
 
         <div class="site-footer__bottom">
           <p>&copy; 2025 EmojiRibbit · All rights reserved</p>
-          <p>이모지는 Unicode 표준을 따릅니다</p>
+          <p>이모지는 Unicode 표준을 따릅니다 · SEO 최적화된 이모지 복사 도구</p>
         </div>
       </div>
     </footer>
